@@ -3,7 +3,7 @@
 
 <p>This folder highlights work done for Blue Ribbons Review, a site which allows Amazon sellers to offer selected merchandise at a discount in exchange for a product review. Since the site is proprietary, the full set of code could not be included here. Instead, some of the code I adjusted is included along with descriptions and images shown below.</p>
 
-<p>My work focused on (1) providing a cohesive, professional-looking User interface (UI) while maintain the brand already present and (2) improving the user experience (UX) by adjusting features to minimize user input and support intuitive interaction with the software.</p>
+<p>My work focused on (1) providing a cohesive, professional-looking user interface (UI) while maintain the brand already present and (2) improving the user experience (UX) by adjusting features to minimize user input and support intuitive interaction with the software.</p>
 
 <h3>Samples of my work (UI):</h3>
 <p><strong>Note: My changes can be seen in these files: Site.css, _Layout.cshtml, _Panel.cshtml, About.cshtml, and Index.cshtml.</strong></p>
@@ -17,8 +17,8 @@
     <h4>Before</h4> <img src="About_before.png" height="300" />
     <h4>After - Improved Layout and Arrangement of Page Content</h4> <img src="About_after.png" height="300" />
     <br />
-  <li>Display edit and delete icons instead of "Edit" and "Delete" links across the site.</li>
-  <li>Collapse the navbar at breakpoint.</li>
+  <li>Displayed edit and delete icons instead of "Edit" and "Delete" links across the site.</li>
+  <li>Collapsed the navbar at 991px breakpoint.</li>
 </ol>
 
 <h3>Samples of my work (UX):</h3>
