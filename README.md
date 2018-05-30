@@ -1,7 +1,7 @@
 # BlueRibbon
-<p>A .NET MVC project, work done as part of my Live Project at The Tech Academy</p>
+<p><i>A .NET MVC project, work done as part of my Live Project at The Tech Academy</i></p>
 
-<p>This folder highlights work done for Blue Ribbons Review, a site which allows Amazon sellers to offer selected merchandise at a discount in exchange for a product review. Since the site is proprietary, the full set of code could not be included here. Instead, code I adjusted is included along with descriptions and images shown below.</p>
+<p>This folder highlights work done for Blue Ribbons Review, a site which allows Amazon sellers to offer selected merchandise at a discount in exchange for a product review. Since the site is proprietary, the full set of code could not be included here. Instead, some of the code I adjusted is included along with descriptions and images shown below.</p>
 
 <p>My work focused on (1) providing a cohesive, professional-looking User interface (UI) while maintain the brand already present and (2) improving the user experience (UX) by adjusting features to minimize user input and support intuitive interaction with the software.</p>
 
