@@ -9,12 +9,6 @@
 <p>Note: My changes can be seen in these files: Site.css, _layout.cshtml, _Panel.cshtml, View/Campaigns/About.cshtml.</p>
 <ol>  
   <li>Adjusted the overall look and styling of the site to provide a more cohesive, professional look.</li> 
-</ol>
-
-<h3>Samples of my work (UI):</h3>
-<p>Note: My changes can be seen in these files: Site.css, _layout.cshtml, _Panel.cshtml, View/Campaigns/About.cshtml.</p>
-<ol>  
-  <li>Adjusted the overall look and styling of the site to provide a more cohesive, professional look.</li> 
   <li>Added an area to hold a page-title and subtitle across the site.</li>
     <h4>Before </h4> <img src="Home_before.png" height="300" />
     <h4>After - New Styling and Addition of Page Title Area</h4> <img src="Home_after.png" height="300" />
