@@ -6,7 +6,7 @@
 <p>My work focused on (1) providing a cohesive, professional-looking User interface (UI) while maintain the brand already present and (2) improving the user experience (UX) by adjusting features to minimize user input and support intuitive interaction with the software.</p>
 
 <h3>Samples of my work (UI):</h3>
-<p>Note: My changes can be seen in these files: Site.css, _layout.cshtml, _Panel.cshtml, View/Campaigns/About.cshtml.</p>
+<p><strong>Note: My changes can be seen in these files: Site.css, _Layout.cshtml, _Panel.cshtml, About.cshtml, and Index.cshtml.</strong></p>
 <ol>  
   <li>Adjusted the overall look and styling of the site to provide a more cohesive, professional look.</li> 
   <li>Added an area to hold a page-title and subtitle across the site.</li>
@@ -22,7 +22,7 @@
 </ol>
 
 <h3>Samples of my work (UX):</h3>
-<p>Note: My changes can be seen in these files: ReviewsController.cs, Views/Reviews/Create.cshtml, and View/Shared/_Details.cshtml </p>
+<p><strong>Note: My changes can be seen in these files: ReviewsController.cs, Create.cshtml, and _Details.cshtml</strong></p>
 <ol>
   <li>Dropdown on Reviews Create page - display the name of the selected item rather than its ID, but send the ID to the controller to be saved to the database.</li>
   <li>Dropdown on Reviews Create page - if the user arrived at this page from a page which already includes the product name, display a readonly textbox containing the product name instead of the dropdown box. Retain the dropdown functionality in other cases.</li>
