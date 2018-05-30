@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Ribbons Review</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/Site.css")
+    @Styles.Render("~/Content/font-awesome.css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/javaScript")
+    @RenderSection("scripts", required: false)
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-left" href="#">
+                    <img src="../images/br_logo_gold_icon_48.png" width="40" height="40" alt="">
+                </a>
+                @Html.ActionLink("Blue Ribbons Reviews", "Index", "Campaigns", new { area = "" }, new { @class = "navbar-brand" })
+
+            </div>
+            <div class="navbar-collapse collapse navbar-right"> 
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("About", "About", "Campaigns")</li>
+                    <li>@Html.ActionLink("Reviews", "Index", "Reviews")</li>
+                    @if (User.IsInRole("Seller"))
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Seller Dashboard <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Campaigns", "SellerIndex", "Campaigns")</li>                               
+                                <li>@Html.ActionLink("Create", "Create", "Campaigns", new { @class = "submenu" },null)</li>                                
+                                <li>@Html.ActionLink("Reviews", "SellerReviewIndex", "Reviews")</li>
+                                <li>@Html.ActionLink("Promotions", "Index", "Promotions")</li>
+                                <li>@Html.ActionLink("Refer a Friend", "Create", "Referrals")</li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Buyer Dashboard <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Campaigns", "Index", "Campaigns")</li>
+                                <li>@Html.ActionLink("Reviews", "ReviewIndex", "Reviews")</li>
+                                <li>@Html.ActionLink("Promotions", "Index", "Promotions")</li>
+                            </ul>
+                        </li>
+                    }
+                    @if (User.IsInRole("Buyer"))
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Buyer Dashboard <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Campaigns", "SellerIndex", "Campaigns")</li>
+                                <li>@Html.ActionLink("Reviews", "ReviewIndex", "Reviews")</li>
+                                <li>@Html.ActionLink("Promotions", "Index", "Promotions")</li>
+                            </ul>
+                        </li>
+                    }
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin Dashboard <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Users", "SortIndex", "Admin/Index")</li>
+                                <li>@Html.ActionLink("Campaigns", "Index", "Campaigns/AdminView")</li>
+                                <li>@Html.ActionLink("Referrals", "Index", "Referrals/Index")</li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+
+    <div class="topic">
+        <div class="container body-content">
+            <h3>@ViewBag.Title</h3>
+            @if (@ViewBag.Tagline != null && ViewBag.Tagline != "")
+            {
+                <h4 class="tagline">@ViewBag.Tagline</h4>
+            }
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+    <footer>
+        <p class="text-center" style="bottom:0;">&copy; @DateTime.Now.Year - Blue Ribbons Review</p>
+    </footer>
+
+
+</body>
+</html>

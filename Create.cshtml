@@ -1,0 +1,140 @@
+﻿@model BlueRibbonsReview.Models.Review
+
+@{
+    ViewBag.Title = "Write a review.";
+    ViewBag.Tagline = "";
+}
+
+@*<h2>Create</h2>*@
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @*<h4>Review</h4>*@
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @*ReviewDate field now automatically populated
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.ReviewDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ReviewDate, "{0:MM-dd-yyyy}",new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ReviewDate, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        <div class="form-group">
+            @* Hidden text box holds value of selected CampaignId to be sent to ReviewsController *@
+            @* CampaignReviewID contains CampaignId only if arrived here from _Details partial view *@
+            @{
+                if (ViewBag.CampaignReviewId == null)
+                {
+                    <input class="invisible" id="hiddenCampaignId" type="text" name="CampaignId">
+                }
+                else
+                {
+                    <input class="invisible" id="hiddenCampaignId" type="text" name="CampaignId" value=@ViewBag.CampaignReviewId width="400">       
+                }
+            }
+            <br />
+            <label class="control-label col-md-2">Campaign</label>
+            <div class="col-md-10">
+                @* Display a dropdown if coming from Reviews/Create, a prepopulated read-only text box if coming from _Detials partial view *@
+                @*<div class="dropdown filterArea">
+                <input class="dropdown-toggle" id="campaignReview" type="text" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" placeholder="Select A Campaign">
+                <ul class="dropdown-menu">
+                </ul>
+                <br />
+                </div>*@
+                @Html.Raw(ViewBag.Campaign)
+                <br />
+                @Html.ValidationMessageFor(model => model.CampaignId, "", new { @class = "text-danger" })
+                <br />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <br />
+            @Html.LabelFor(model => model.ProductRating, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="txt-center">
+                    <form>
+                        <div class="rating">
+                            <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
+                            <label for="star5">☆</label>
+                            <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
+                            <label for="star4">☆</label>
+                            <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
+                            <label for="star3">☆</label>
+                            <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" />
+                            <label for="star2">☆</label>
+                            <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
+                            <label for="star1">☆</label>
+                            <div class="clear"></div>
+                        </div>
+                    </form>
+                </div>
+                @*<div class="star-rating fa-lg fa-ul">
+            <div class="star-rating__wrap fa-lg fa-ul">
+                <input class="star-rating__input fa-lg" id="star-rating-5" type="radio" name="rating" value="5" checked>
+                <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-5" title="5 out of 5 stars"></label>
+                <input class="star-rating__input fa-lg" id="star-rating-4" type="radio" name="rating" value="4">
+                <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-4" title="4 out of 5 stars"></label>
+                <input class="star-rating__input fa-lg" id="star-rating-3" type="radio" name="rating" value="3">
+                <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-3" title="3 out of 5 stars"></label>
+                <input class="star-rating__input fa-lg" id="star-rating-2" type="radio" name="rating" value="2">
+                <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-2" title="2 out of 5 stars"></label>
+                <input class="star-rating__input fa-lg" id="star-rating-1" type="radio" name="rating" value="1">
+                <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-1" title="1 out of 5 stars"></label>
+            </div>
+        </div>*@
+                @Html.ValidationMessageFor(model => model.ProductRating, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ReviewDetails, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.ReviewDetails, new { @class = "details" })
+                <br />
+                @Html.ValidationMessageFor(model => model.ReviewDetails, "", new { @class = "text-danger" })
+                <br />
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.UserId, "UserId", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("UserId", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script>
+    $("li").click(function () {
+        var listElementCampaignId = ($(this).attr("id"));
+        $("#hiddenCampaignId").val(listElementCampaignId)
+        var listElementCampaignName = ($(this).find("p").text());       
+        $("#campaignReview").val(listElementCampaignName)
+    });
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Styles.Render("~/Content/font-awesome")
+}

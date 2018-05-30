@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "About Us";
+    ViewBag.Tagline = "";
+}
+@*<h2 class="text-center">@ViewBag.Title</h2>*@
+<h3>@ViewBag.Message</h3>
+
+<div class="about-container">
+    <h1 class="title-lg">About Blue Ribbons Review</h1>
+    <p class="lead text-center">Blue Ribbons Review is a website dedicated to saving people money.</p>
+    <p class="about-body text-center">
+        Our purpose is to provide a place where people can find excellent discounts on amazing products!
+        We display heavily-discounted products from many websites.
+        Whether you are a customer looking for cost-effective merchandise or a seller who wants to offer their discounted products to others so as to increase sales,
+        Blue Ribbons Review is the choice for you.
+    </p>
+    <p class="about-body text-center">
+        We started as a Facebook review group, and after much success it has expanded to one of the most popular websites on the internet!
+        Co-Founders Alex Arezzini and Jack Stanley teamed up to create a site that hooks you up with the best deals out there. Good shopping!
+    </p>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <section class="faq">
+                    <h3 id="faq-header" class="title-lg">General Questions</h3>
+                    <div>
+                        <div class="panel-group panel-default">
+                            <div class="panel-heading" role="tab" id="faqTwo">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapseTwo" aria-expanded="false" class="collapsed">How do I use Blue Ribbons Review?</a>
+                                </h4>
+                                <div id="collapseTwo" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        Simple: just search our Deals page and find the discount you’re looking for. Once you’ve located the product you’re interested in purchasing,
+                                        click on the product. You will then be taken to the website that’s offering the discount. Purchase the product and that’s it!
+                                    </div>
+                                </div>
+                            </div>                  
+                            <div class="panel-heading" role="tab" id="faqThree">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapseThree" aria-expanded="false" class="collapsed">Is a review required in exchange for purchasing a product through Blue Ribbons Review?</a>
+                                </h4>
+                                <div id="collapseThree" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        No. Get these great deals with no strings attached! <br /><br />
+                                        In the past, before Amazon changed its policies regarding review,
+                                        Blue Ribbons Review would have their customers write honest reviews for products they received at a discount.
+                                        This is no longer the case. Whether or not you write a review for discounted products you buy is completely up to you.
+                                        It is not required to write reviews.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+       
+            <div class="col-sm-6">
+                <h3 id="contactForm-header" class="title-lg">Send Us A Message</h3>
+                <section role="form" class="form">
+                    <form class="contactForm">
+                        <div class="row form-group col-xs-12">
+
+                            <label for="inputName" class="sr-only">Name</label>
+                            <input type="text" class="form-control about-input" placeholder="Enter Name" required>
+
+                        </div>
+                        <div class="row form-group col-xs-12">
+                            <label for="inputEmail" class="sr-only">Email address</label>
+                            <input type="email" class="form-control about-input" id="contactInputEmail" placeholder="Enter email" required>
+
+                        </div>
+                        <div class="row form-group col-xs-12">
+                            <label for="inputMessage" class="sr-only">Message</label>
+                            <textarea class="form-control about-input" rows="3" placeholder="Enter your message here" required></textarea>
+                        </div>
+                        <div class="row form-group col-xs-12 fa-icon-container">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-envelope fa-lg" aria-hidden="true"></i> Send Messege
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
