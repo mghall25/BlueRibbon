@@ -26,5 +26,8 @@
 <ol>
   <li>Dropdown on Reviews Create page - display the name of the selected item rather than its ID, but send the ID to the controller to be saved to the database.</li>
   <li>Dropdown on Reviews Create page - if the user arrived at this page from a page which already includes the product name, display a readonly textbox containing the product name instead of the dropdown box. Retain the dropdown functionality in other cases.</li>
+    <h4>Page with Dropdown</h4> <img src="ReviewCreate_dropdown.png" height="300" />
+    <h4>Page with Textbox</h4> <img src="ReviewCreate_textbox.png" height="300" />
+    <br />
   <li>Added sort functionality to the Reviews Index page.</li>
 </ol>
